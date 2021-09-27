@@ -1,0 +1,33 @@
+GET localhost:7777/_cat/indices?v
+
+# DESCRIPTION
+# ---------------
+# Fetch indices data.
+# health - health status of indices.
+#         green - everything is ok
+#         yellow - data are not secured. Possibly reason: Lack of replicas.
+#         red - Does not have allocated primary shard, primary replica, data are broken, networking issues, lack of
+#         diskspace.
+# status - index status.
+#          open - open for work, closed for modification.
+#          closed - closed for work, open for modification.
+# index - index name
+# uuid - index identifier
+# pri - amount of primary shards
+# rep - amount of replicas indices
+# docs.count - amount of indexed documents
+# docs.deleted - amount of deleted documents
+# store.size - amount of taken space
+# pri.store.size - amount of space allocated in primary shard
+
+# RESPONSE
+# ---------------
+# health status index                       uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+# green  open   .monitoring-es-7-2021.09.27 sQ_sHzO1S5uH5KNipm4txA   1   0         21            0     77.9kb         77.9kb
+# green  open   .monitoring-es-7-2021.05.23 -0fziE7SSB63DwNQC6_t_g   1   0       6102         4660      2.7mb          2.7mb
+# green  open   .monitoring-es-7-2021.05.22 JjC6URNeQF2ps_cYbFqUiA   1   0       8176         6102      3.5mb          3.5mb
+# yellow open   products_2                  j5HUcH1MQlKlAyYCCk49tA   1   1          0            0       231b           231b
+# green  open   .monitoring-es-7-2021.05.25 ap_LDbmdRXWhPjrACX1z3A   1   0       1560         1188    875.8kb        875.8kb
+# green  open   .monitoring-es-7-2021.05.27 4URbRqbZRQ-FGLwl6_VNRw   1   0       9481         7544        4mb            4mb
+# yellow open   products                    SgjK1NDFT2-46ar4cp2aVg   1   1          2            0      8.5kb          8.5kb
+# green  open   .monitoring-es-7-2021.05.26 BaMg63PER-KrwG9-x9i2MA   1   0      14257        11364      5.5mb          5.5mb
