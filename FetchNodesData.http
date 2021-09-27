@@ -1,0 +1,9 @@
+GET localhost:7777/_cat/nodes?v
+
+# DESCRIPTION
+# ----------------
+# Nodes data
+
+# EXAMPLE RESPONSE
+#ip        heap.percent ram.percent cpu load_1m load_5m load_15m node.role master name
+#127.0.0.1            3          97  11    1.51    1.56     3.38 cdhimrstw *      elasticsearch
