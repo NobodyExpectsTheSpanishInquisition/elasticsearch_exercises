@@ -1,0 +1,8 @@
+GET localhost:7777/
+
+#DESCRIPTION
+#------------------
+# Fetch cluster data like:
+# - cluster name
+# - cluster uuid
+# - version info
