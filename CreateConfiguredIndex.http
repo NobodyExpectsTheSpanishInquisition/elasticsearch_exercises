@@ -1,0 +1,47 @@
+PUT localhost:7777/test_index_2
+Content-Type: application/json
+
+{
+   "settings": {
+      "number_of_shards": 2,
+      "number_of_replicas": 2
+   }
+}
+
+###
+# DESCRIPTION
+# ------------------
+# Create index with custom configuration
+
+
+# BODY DESCRIPTION
+# ------------------
+# number_of_shards - amount of default shards for new index
+# number_of_replicas - amount of default replicas shards for new index
+
+# RESPONSE
+# ------------------
+# {
+#   "acknowledged": true,
+#   "shards_acknowledged": true,
+#   "index": "test_index_2"
+# }
+
+###
+
+# RESULT
+# ------------------
+GET localhost:7777/_cat/indices?v
+
+#health status index                       uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+#green  open   .monitoring-es-7-2021.09.27 sQ_sHzO1S5uH5KNipm4txA   1   0         21            0    207.8kb        207.8kb
+#green  open   .monitoring-es-7-2021.05.23 -0fziE7SSB63DwNQC6_t_g   1   0       6102         4660      2.7mb          2.7mb
+#green  open   .monitoring-es-7-2021.05.22 JjC6URNeQF2ps_cYbFqUiA   1   0       8176         6102      3.5mb          3.5mb
+#yellow open   test_index_2                bM7CgarYTPS4GHMUbn--eA   2   2          0            0       416b           416b <- new index
+#yellow open   products_2                  j5HUcH1MQlKlAyYCCk49tA   1   1          0            0       231b           231b
+#green  open   .monitoring-es-7-2021.05.25 ap_LDbmdRXWhPjrACX1z3A   1   0       1560         1188    875.8kb        875.8kb
+#yellow open   test_index                  -7hXOgtbTK6TGVAZk3OaUQ   1   1          0            0       208b           208b
+#green  open   .monitoring-es-7-2021.05.27 4URbRqbZRQ-FGLwl6_VNRw   1   0       9481         7544        4mb            4mb
+#green  open   .monitoring-es-7-2021.05.26 BaMg63PER-KrwG9-x9i2MA   1   0      14257        11364      5.5mb          5.5mb
+#yellow open   products                    SgjK1NDFT2-46ar4cp2aVg   1   1          2            0      8.5kb          8.5kb
+

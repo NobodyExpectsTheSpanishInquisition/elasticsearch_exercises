@@ -14,7 +14,7 @@ GET localhost:7777/_cat/indices?v
 # index - index name
 # uuid - index identifier
 # pri - amount of primary shards
-# rep - amount of replicas indices
+# rep - amount of replicas shards
 # docs.count - amount of indexed documents
 # docs.deleted - amount of deleted documents
 # store.size - amount of taken space
