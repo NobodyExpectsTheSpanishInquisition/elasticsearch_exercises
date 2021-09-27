@@ -1,0 +1,33 @@
+PUT localhost:7777/test_index
+
+# DESCRIPTION
+# ----------------
+# Create new index.
+
+
+# RESPONSE
+# ----------------
+# {
+#   "acknowledged": true,
+#   "shards_acknowledged": true,
+#   "index": "test_index"
+# }
+
+# RESPONSE DESCRIPTION
+# ----------------
+# acknowledged - request handled with success
+# shards_acknowledged - shards for index created successfully
+# index - name of new index
+
+# RESULT
+# ----------------
+# health status index                       uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+# green  open   .monitoring-es-7-2021.09.27 sQ_sHzO1S5uH5KNipm4txA   1   0         21            0    156.4kb        156.4kb
+# green  open   .monitoring-es-7-2021.05.23 -0fziE7SSB63DwNQC6_t_g   1   0       6102         4660      2.7mb          2.7mb
+# green  open   .monitoring-es-7-2021.05.22 JjC6URNeQF2ps_cYbFqUiA   1   0       8176         6102      3.5mb          3.5mb
+# yellow open   products_2                  j5HUcH1MQlKlAyYCCk49tA   1   1          0            0       231b           231b
+# green  open   .monitoring-es-7-2021.05.25 ap_LDbmdRXWhPjrACX1z3A   1   0       1560         1188    875.8kb        875.8kb
+# yellow open   test_index                  -7hXOgtbTK6TGVAZk3OaUQ   1   1          0            0       208b           208b - NEW INDEX
+# green  open   .monitoring-es-7-2021.05.27 4URbRqbZRQ-FGLwl6_VNRw   1   0       9481         7544        4mb            4mb
+# yellow open   products                    SgjK1NDFT2-46ar4cp2aVg   1   1          2            0      8.5kb          8.5kb
+# green  open   .monitoring-es-7-2021.05.26 BaMg63PER-KrwG9-x9i2MA   1   0      14257        11364      5.5mb          5.5mb
